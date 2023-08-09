@@ -6,5 +6,6 @@ from wtforms.validators import DataRequired
 class UploadFileForm(FlaskForm):
     file = FileField('File', validators=[FileRequired(), FileAllowed(['docx'], 'docx only!')])
     submit = SubmitField('Upload File')
+    
     #restrict file to .docx
     #file = FileField('File', validators=[FileRequired(), FileAllowed(['docx'], 'docx only!')])
