@@ -9,6 +9,7 @@ certifi==2023.7.22
 charset-normalizer==2.0.12
 click==8.1.6
 docutils==0.20.1
+docx==0.2.4
 Flask==2.0.2
 flask-ldap3-login==0.9.18
 flask-restx==1.1.0
@@ -24,6 +25,7 @@ ldap3==2.9.1
 lxml==4.9.3
 MarkupSafe==2.0.1
 packaging==23.1
+Pillow==10.0.0
 pyasn1==0.5.0
 pycodestyle==2.11.0
 Pygments==2.16.1
