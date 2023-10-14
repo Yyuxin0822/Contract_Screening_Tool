@@ -5,17 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta author="Yuxin Yang">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}"  />
     <title>Contract Language Screening App</title>
 </head>
 
 <body>
-    <h1 style='color:blue'> A simple flask server !</h1>
-
+    <h1>Contract Language Screening!</h1>
+    <br>
     <form  method="post" enctype="multipart/form-data">
         {{form.hidden_tag()}}
         {{form.file()}}   
         {{form.submit()}}
     </form>
-    <a href="{{url_for('download')}}">Download</a>
+    <br><br>
+    <p class="instruct">This tool provides a preliminary screening of your contract language document.
+        It <strong>only accepts .docx file</strong> format. If you have other format files, such as .pdf, .doc, 
+        please use the format conversion tool in Adobe or MicrosoftWords to process the file before continuing.<br><br>
+        The tool will generate two documents, highlight.docx and report.docx. It does not read tables and images. <br>
+        <strong>Highlight.docx</strong>  highlights the sentences that include sensitive words.
+        <strong>Report.docx</strong>  includes the count of sensitive words and the suggestions for modifying the terms. <br><br>
+
+        For any privacy concerns, this tool will never store your file. 
+        If you have any questions or feedbacks, please contact Yuxin Yang at yyang@sherwoodengineers.com
+    </p>
+    <br><br>
+    {% if notice %}
+        <p style='color:red'>{{notice}}</p>
+    {%endif%}
+
+    <a href="{{url_for('template')}}">Download Template</a>
+
+    {% if notice %}
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="{{url_for('highlightdoc')}}">Download Highlight.docx</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="{{url_for('reportdoc')}}">    Download Report.docx</a>
+    {%endif%}
 </body>
 

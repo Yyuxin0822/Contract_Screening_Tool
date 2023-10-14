@@ -1,0 +1,36 @@
+/*Align the whole document in the middle*/
+
+body{
+    margin-top: 150px;
+    background-color: white;
+    text-align: center;
+
+    font-family: "Roboto", Helvetica, Arial, sans-serif
+    align-items: center;
+  }
+  
+
+.instruct{
+  align-self: center;
+  text-align: justify;
+  -moz-text-align-last: center;
+
+  font-size: 16px;
+  font-weight: 100;
+  width: 50%;
+  margin: auto;
+  line-height: 150%;
+  overflow: auto;
+}
+
+h1{    
+
+  align-self: center;
+  font-size: 36px;
+
+}
+a:link, a:visited {
+  color:black;
+text-decoration:underline;
+
+}
